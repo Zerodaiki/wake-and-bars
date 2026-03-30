@@ -21,7 +21,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             {/* Instagram */}
             <a
-              href="#"
+              href="https://www.instagram.com/wake_and_bars/" target="_blank" rel="noopener noreferrer"
               aria-label="Instagram"
               className="text-text-secondary hover:text-white transition-colors"
             >
@@ -34,7 +34,7 @@ export function Navbar() {
 
             {/* TikTok */}
             <a
-              href="#"
+              href="https://www.instagram.com/wake_and_bars/" target="_blank" rel="noopener noreferrer"
               aria-label="TikTok"
               className="text-text-secondary hover:text-white transition-colors"
             >
