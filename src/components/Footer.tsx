@@ -12,7 +12,7 @@ export function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a href="#" className="text-text-secondary hover:text-white text-sm transition-colors">Instagram</a>
+          <a href="https://www.instagram.com/wake_and_bars/" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white text-sm transition-colors">Instagram</a>
           <a href="#" className="text-text-secondary hover:text-white text-sm transition-colors">TikTok</a>
         </div>
 
