@@ -6,7 +6,7 @@ import { DualCTA } from "./DualCTA";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-5 py-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-5 pt-32 pb-20 overflow-hidden">
       {/* Background gradient orb */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-accent-pink/10 to-bg-purple/40 rounded-full blur-[120px] pointer-events-none" />
 

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getWaitlistCount } from "@/lib/submitEmail";
 
@@ -28,7 +27,6 @@ function AnimatedCounter() {
   const [count, setCount] = useState(BASE_COUNT);
 
   useEffect(() => {
-    // Try to fetch real count from Supabase and add to base
     getWaitlistCount().then((real) => {
       if (real > 0) setCount(BASE_COUNT + real);
     });
@@ -52,26 +50,15 @@ export function SocialProof() {
   return (
     <section className="relative px-5 py-24 sm:py-32">
       <div className="max-w-5xl mx-auto">
-        {/* Counter */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <AnimatedCounter />
           <p className="text-text-secondary text-lg mt-3">people waiting to wake up different</p>
-        </motion.div>
+        </div>
 
-        {/* Quote cards */}
         <div className="grid md:grid-cols-3 gap-6">
-          {quotes.map((quote, i) => (
-            <motion.div
+          {quotes.map((quote) => (
+            <div
               key={quote.handle}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.12 }}
               className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all"
             >
               <div className="flex items-center gap-3 mb-3">
@@ -81,7 +68,7 @@ export function SocialProof() {
                 <span className="text-xs font-heading text-text-secondary">{quote.handle}</span>
               </div>
               <p className="text-sm text-white/90 leading-relaxed">&quot;{quote.text}&quot;</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

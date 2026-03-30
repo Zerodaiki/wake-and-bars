@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const features = [
   {
     icon: (
@@ -52,26 +50,17 @@ export function Features() {
   return (
     <section className="relative px-5 py-24 sm:py-32">
       <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <p className="font-heading text-sm text-accent-green uppercase tracking-widest mb-3">Features</p>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold">
             Not your average <span className="gradient-text">alarm clock</span>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
-          {features.map((feature, i) => (
-            <motion.div
+          {features.map((feature) => (
+            <div
               key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1 }}
               className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all group"
             >
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -79,7 +68,7 @@ export function Features() {
               </div>
               <h3 className="font-heading text-lg font-bold mb-2">{feature.title}</h3>
               <p className="text-text-secondary text-sm leading-relaxed">{feature.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

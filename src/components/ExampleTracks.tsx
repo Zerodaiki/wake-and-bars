@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Visualizer } from "./Visualizer";
 
 const tracks = [
@@ -55,33 +54,23 @@ export function ExampleTracks() {
   return (
     <section className="relative px-5 py-24 sm:py-32">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <p className="font-heading text-sm text-accent-orange uppercase tracking-widest mb-3">Preview</p>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold">
             Every morning hits <span className="gradient-text">different</span>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {tracks.map((track, i) => (
-            <motion.div
+          {tracks.map((track) => (
+            <div
               key={track.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.12 }}
               className={`relative rounded-2xl bg-gradient-to-br ${track.bgGradient} border border-white/5 hover:border-white/10 transition-all group overflow-hidden`}
             >
               {/* Top bar — mini player */}
               <div className="p-5 pb-3">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    {/* Play button */}
                     <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/15 transition-colors">
                       <svg width="14" height="16" viewBox="0 0 14 16" fill="white">
                         <path d="M0 0l14 8-14 8V0z" />
@@ -140,7 +129,7 @@ export function ExampleTracks() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

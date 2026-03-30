@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const steps = [
   {
     number: "01",
@@ -45,33 +43,19 @@ export function HowItWorks() {
   return (
     <section className="relative px-5 py-24 sm:py-32">
       <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <p className="font-heading text-sm text-accent-pink uppercase tracking-widest mb-3">The Pipeline</p>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold">
             Calendar → Lyrics → <span className="gradient-text">Banger</span>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, i) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.15 }}
-              className="relative group"
-            >
-              {/* Connector line (hidden on mobile, visible on md+) */}
+            <div key={step.number} className="relative group">
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-10 left-[calc(50%+40px)] w-[calc(100%-80px)] h-px bg-gradient-to-r from-white/10 to-white/5" />
               )}
-
               <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
                 <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                   {step.icon}
@@ -80,7 +64,7 @@ export function HowItWorks() {
                 <h3 className="font-heading text-xl font-bold mb-3">{step.title}</h3>
                 <p className="text-text-secondary text-sm leading-relaxed">{step.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
